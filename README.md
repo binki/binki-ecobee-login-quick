@@ -6,11 +6,21 @@ Fix Ecobee’s website to have a quick login button and auto-login instead of re
 
 In order to log into the Ecobee website starting at https://ecobee.com/, 5 clicks are required.
 
-1. Click on the hamburger menu (三). ![Ecobee main page](https://i.imgur.com/BnlCcTH.png)
-2. Click on “Sign in”. ![Ecobee hamburger menu (三) contents](https://i.imgur.com/nxxqoo8.png)
-3. Click on “Sign in to your account”. ![Ecobee “Sign in” menu contents](https://i.imgur.com/hvO8bN0.png)
-4. Click on “Continue”. ![Ecobee Email entry form](https://i.imgur.com/bO8RgK1.png)
-5. Click on “Sign in”. ![Ecobee Password entry form](https://i.imgur.com/Znre5TY.png)
+1. Click on the hamburger menu (三).
+
+   ![Ecobee main page](https://i.imgur.com/BnlCcTH.png)
+2. Click on “Sign in”.
+
+   ![Ecobee hamburger menu (三) contents](https://i.imgur.com/nxxqoo8.png)
+3. Click on “Sign in to your account”.
+
+   ![Ecobee “Sign in” menu contents](https://i.imgur.com/hvO8bN0.png)
+4. Click on “Continue”.
+
+   ![Ecobee Email entry form](https://i.imgur.com/bO8RgK1.png)
+5. Click on “Sign in”.
+
+   ![Ecobee Password entry form](https://i.imgur.com/Znre5TY.png)
 
 ## Solution
 
