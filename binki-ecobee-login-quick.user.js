@@ -34,9 +34,14 @@
     }
   } else if (hostname === 'auth.ecobee.com') {
     const signInButton = await whenElementQuerySelectorAsync(document.body, '[data-action-button-primary=true]');
-    const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
-    if (usernameInput.value && passwordInput.value) {
+    // Originally there was just one page with both fields. Now there are two, likely to support something like
+    // SSO or external login providers. So require at least one of the known fields to be present and require
+    // all present fields to be filled prior to autoclicking. See #3.
+    const possibleInputFields = [
+      'username',
+      'password',
+    ].map(id => document.getElementById(id)).filter(input => input);
+    if (possibleInputFields.length && possibleInputFields.every(input => input.value)) {
       signInButton.click();
     }
   } else {
