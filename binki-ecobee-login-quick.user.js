@@ -6,6 +6,7 @@
 // @match https://auth.ecobee.com/*
 // @require https://raw.githubusercontent.com/binki/binki-userscript-when-element-changed-async/88cf57674ab8fcaa0e86bdf5209342ec7780739a/binki-userscript-when-element-changed-async.js
 // @require https://github.com/binki/binki-userscript-when-element-query-selector-async/raw/0a9c204bdc304a9e82f1c31d090fdfdf7b554930/binki-userscript-when-element-query-selector-async.js
+// @require https://github.com/binki/binki-userscript-when-input-completed/raw/d11bfc5021cb99fd80d5a2d008ffd4c7eabaf554/binki-userscript-when-input-completed.js
 // ==/UserScript==
 
 (async () => {
@@ -41,7 +42,8 @@
       'username',
       'password',
     ].map(id => document.getElementById(id)).filter(input => input);
-    if (possibleInputFields.length && possibleInputFields.every(input => input.value)) {
+    if (possibleInputFields.length) {
+      await Promise.all(possibleInputFields.map(input => whenInputCompletedAsync(input)));
       signInButton.click();
     }
   } else {
