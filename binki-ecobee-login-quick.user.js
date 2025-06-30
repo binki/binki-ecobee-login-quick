@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name binki-ecobee-login-quick
-// @version 1.0.2
+// @version 1.0.3
 // @homepageURL https://github.com/binki/binki-ecobee-login-quick
 // @match https://www.ecobee.com/*
 // @match https://auth.ecobee.com/*
