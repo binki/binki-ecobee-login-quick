@@ -26,6 +26,15 @@
         quickLoginButton.textContent = 'Quick Login';
         quickLoginButton.addEventListener('click', async e => {
           e.preventDefault();
+          // Wait for the page to be rehydrated and flash prior to clicking on any of the menus because they won’t work properly
+          // until after hydration. Hydration takes so long that the user is likely to interact with the Quick Login button prior
+          // to it completing.
+          // See #5 (https://github.com/binki/binki-ecobee-login-quick/issues/5) for a video demonstrating the hydration flash
+          // and effects.
+          while (document.querySelector(`[data-qa-id='global-access-shortcuts-wrapper'] > style`)) {
+            await whenElementChangedAsync(document.body);
+          }
+
           (await whenElementQuerySelectorAsync(document.body, '[data-qa-id="main-nav-mobile-menus-toggle"]')).click();
           (await whenElementQuerySelectorAsync(document.body, 'button[aria-controls="main-nav-menu-signIn-items"]')).click();
           (await whenElementQuerySelectorAsync(document.body, '#main-nav-menu-signIn-items > li > a')).click();
